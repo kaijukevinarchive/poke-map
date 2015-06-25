@@ -7,7 +7,13 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.resource('pokedex');
-  this.route('pokemon', {path: 'pokemon/:pkmn_id'});
+  this.resource('pokemon', {path: 'pokemon/:pkmn_id'});
+  this.resource('user');
+  this.resource('map');
+  this.resource('users', function() {
+    this.resource('new');
+  });
+  this.route('pokemons');
 });
 
 export default Router;
